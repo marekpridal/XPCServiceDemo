@@ -800,12 +800,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="F3y-vF-KGg" id="PbA-RC-fVG"/>
                         <outlet property="connectionStatus" destination="yEW-M2-EXC" id="vuR-mg-vNn"/>
                         <outlet property="establishConnectionButton" destination="qJx-V5-ScV" id="OB4-8g-7dx"/>
                         <outlet property="firstButton" destination="TWF-L4-CY1" id="l9F-Oj-q63"/>
                         <outlet property="invalidateConnectionButton" destination="G2b-Yt-2fv" id="XaQ-Sy-8hC"/>
                         <outlet property="label" destination="Wew-tR-Ixn" id="YyU-Yu-8zj"/>
-                        <outlet property="secondButton" destination="F3y-vF-KGg" id="PbA-RC-fVG"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

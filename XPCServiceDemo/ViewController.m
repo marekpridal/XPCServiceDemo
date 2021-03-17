@@ -13,7 +13,7 @@
 
 @property NSXPCConnection* connectionToService;
 @property (weak) IBOutlet NSButton *firstButton;
-@property (weak) IBOutlet NSButton *secondButton;
+@property (weak) IBOutlet NSButton *clearButton;
 @property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSTextField *connectionStatus;
 @property (weak) IBOutlet NSButton *establishConnectionButton;
@@ -29,15 +29,15 @@
     [self.establishConnectionButton setTitle:@"Establish connection"];
     [self.invalidateConnectionButton setTitle:@"Invalidate Connection"];
     [self.connectionStatus setStringValue:@""];
-    [self secondButtonPressed];
+    [self clearButtonPressed];
 
     [self.firstButton setTitle:@"Action button"];
     NSClickGestureRecognizer* firstButtonRecognizer = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(firstButtonPressed)];
     [self.firstButton addGestureRecognizer:firstButtonRecognizer];
 
-    [self.secondButton setTitle:@"Clear button"];
-    NSClickGestureRecognizer* secondButtonRecognizer = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(secondButtonPressed)];
-    [self.secondButton addGestureRecognizer:secondButtonRecognizer];
+    [self.clearButton setTitle:@"Clear button"];
+    NSClickGestureRecognizer* clearButtonRecognizer = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(clearButtonPressed)];
+    [self.clearButton addGestureRecognizer:clearButtonRecognizer];
 }
 
 -(void)dealloc {
@@ -67,7 +67,7 @@
     }];
 }
 
-- (void)secondButtonPressed {
+- (void)clearButtonPressed {
     [self.label setStringValue:@""];
 }
 
