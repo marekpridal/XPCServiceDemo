@@ -80,6 +80,7 @@
 		DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPCServiceDemoTitleLabelService.m; sourceTree = "<group>"; };
 		DF27945926020FE100EA3D9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF27945B26020FE100EA3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF27946C2602149000EA3D9E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,12 +142,13 @@
 			children = (
 				DF27941C26020B7800EA3D9E /* AppDelegate.h */,
 				DF27941D26020B7800EA3D9E /* AppDelegate.m */,
-				DF27941F26020B7800EA3D9E /* ViewController.h */,
-				DF27942026020B7800EA3D9E /* ViewController.m */,
 				DF27942226020B7900EA3D9E /* Assets.xcassets */,
-				DF27942426020B7900EA3D9E /* Main.storyboard */,
+				DF27946C2602149000EA3D9E /* Constants.h */,
 				DF27942726020B7900EA3D9E /* Info.plist */,
 				DF27942826020B7900EA3D9E /* main.m */,
+				DF27942426020B7900EA3D9E /* Main.storyboard */,
+				DF27941F26020B7800EA3D9E /* ViewController.h */,
+				DF27942026020B7800EA3D9E /* ViewController.m */,
 				DF27942A26020B7900EA3D9E /* XPCServiceDemo.entitlements */,
 			);
 			path = XPCServiceDemo;
@@ -635,6 +637,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
@@ -649,6 +652,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
