@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Objc View Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="122" y="240" width="554" height="270"/>
@@ -705,7 +705,7 @@
         <scene sceneID="SJ3-lm-OUk">
             <objects>
                 <windowController storyboardIdentifier="SwiftWindowController" id="rRl-gx-IH7" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YSw-p0-UuZ">
+                    <window key="window" title="Swift View Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YSw-p0-UuZ">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="462" width="602" height="489"/>
@@ -746,9 +746,6 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <action selector="establishButtonPressed:" target="5zg-V2-3lH" id="wYW-L2-VpM"/>
-                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MGJ-Vj-Rg0">
                                                 <rect key="frame" x="63" y="345" width="76" height="32"/>
@@ -756,9 +753,6 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <action selector="invalidateButtonPressed:" target="5zg-V2-3lH" id="3Uh-AV-4vB"/>
-                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4aq-xL-lrR">
                                                 <rect key="frame" x="133" y="345" width="76" height="32"/>
@@ -766,9 +760,6 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <action selector="actionButtonPressed:" target="5zg-V2-3lH" id="fR9-va-TdS"/>
-                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lb9-kh-1Xr">
                                                 <rect key="frame" x="203" y="345" width="76" height="32"/>
@@ -776,9 +767,6 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <action selector="clearButtonPressed:" target="5zg-V2-3lH" id="Zwp-NT-sP1"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <visibilityPriorities>

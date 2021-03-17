@@ -44,7 +44,7 @@
 }
 
 -(void)dealloc {
-    [_connectionToService invalidate];
+    [self.connectionToService invalidate];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -57,7 +57,7 @@
     NSLog(@"firstButtonPressed");
     
     ViewController *__weak weakSelf = self;
-    [[_connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf2.label setStringValue:error.localizedDescription];
@@ -87,24 +87,26 @@
 }
 
 - (void)establishXPCConnection {
-    _connectionToService = [[NSXPCConnection alloc] initWithServiceName:XPCServiceDemoTitleLabelServiceName];
-    _connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
-    [_connectionToService resume];
-    [self.connectionStatus setStringValue:[NSString stringWithFormat:@"Connected to service %@", self.connectionToService.serviceName]];
+    NSXPCConnection *connectionToService = [[NSXPCConnection alloc] initWithServiceName:XPCServiceDemoTitleLabelServiceName];
+    connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    [connectionToService resume];
+    [self.connectionStatus setStringValue:[NSString stringWithFormat:@"Connected to service %@", connectionToService.serviceName]];
     
     ViewController *__weak weakSelf = self;
-    [_connectionToService setInvalidationHandler:^{
+    [connectionToService setInvalidationHandler:^{
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [[weakSelf2 connectionStatus] setStringValue:@"Connection has been invalidated. Need to reestablish connection."];
         });
     }];
-    [_connectionToService setInterruptionHandler:^{
+    [connectionToService setInterruptionHandler:^{
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [[weakSelf2 connectionStatus] setStringValue:@"Connection has been interrupted but still valid."];
         });
     }];
+    
+    self.connectionToService = connectionToService;
 }
 
 - (void)showSwiftWindowViewController {
