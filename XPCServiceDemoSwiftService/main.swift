@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MyServiceDelegate: NSObject, NSXPCListenerDelegate {
+final class XPCServiceDemoSwiftServiceDelegate: NSObject, NSXPCListenerDelegate {
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
         let exportedObject = XPCServiceDemoSwiftServiceModel()
         newConnection.exportedInterface = NSXPCInterface(with: XPCServiceDemoSwiftServiceProtocol.self)
@@ -17,7 +17,7 @@ final class MyServiceDelegate: NSObject, NSXPCListenerDelegate {
     }
 }
 
-let delegate = MyServiceDelegate()
+let delegate = XPCServiceDemoSwiftServiceDelegate()
 let listener = NSXPCListener.service()
 listener.delegate = delegate
 listener.resume()
