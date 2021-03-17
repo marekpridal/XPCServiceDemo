@@ -28,13 +28,32 @@ final class SwiftViewController: NSViewController {
         clearButton.title = "Clear button"
         clearButtonPressed()
 
-        establishConnectionButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(establishConnection)))
+        establishConnectionButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(establishSwiftConnection)))
+//        establishConnectionButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(establishObjcConnection)))
         invalidateConnectionButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(invalidateButtonPressed)))
         actionButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(actionButtonPressed)))
         clearButton.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(clearButtonPressed)))
     }
     
-    @objc private func establishConnection() {
+    @objc private func establishObjcConnection() {
+        let connection = NSXPCConnection(serviceName: XPCServiceDemoTitleLabelServiceName)
+        connection.remoteObjectInterface = NSXPCInterface(with: XPCServiceDemoTitleLabelServiceProtocol.self)
+        connection.resume()
+        connectionStatus.stringValue = "Connected to service \(connection.serviceName ?? "")"
+        connection.interruptionHandler = { [weak connectionStatus] in
+            DispatchQueue.main.async { [weak connectionStatus] in
+                connectionStatus?.stringValue = "Connection has been interrupted but still valid."
+            }
+        }
+        connection.invalidationHandler = {[weak connectionStatus] in
+            DispatchQueue.main.async { [weak connectionStatus] in
+                connectionStatus?.stringValue = "Connection has been invalidated. Need to reestablish connection."
+            }
+        }
+        self.connection = connection
+    }
+    
+    @objc private func establishSwiftConnection() {
         let connection = NSXPCConnection(serviceName: "eu.marekpridal.XPCServiceDemoSwiftService")
         connection.remoteObjectInterface = NSXPCInterface(with: XPCServiceDemoSwiftServiceProtocol.self)
         connection.resume()
@@ -57,15 +76,30 @@ final class SwiftViewController: NSViewController {
     }
 
     @objc private func actionButtonPressed() {
-//        upperCase(string: "Hi")
+        swiftUpperCase(string: "Hi")
+//        objcUpperCase(string: "Hello")
     }
     
-    private func upperCase(string: String) {
+    private func objcUpperCase(string: String) {
         let service = connection?.remoteObjectProxyWithErrorHandler { [weak label] (error) in
             DispatchQueue.main.async { [weak label] in
                 label?.stringValue = error.localizedDescription
             }
-        } as? XPCServiceDemoSwiftService.XPCServiceDemoSwiftServiceModel
+        } as? XPCServiceDemoTitleLabelServiceProtocol
+
+        service?.upperCaseString(string, withReply: { [weak label] (result) in
+            DispatchQueue.main.async { [weak label] in
+                label?.stringValue = result ?? ""
+            }
+        })
+    }
+    
+    private func swiftUpperCase(string: String) {
+        let service = connection?.remoteObjectProxyWithErrorHandler { [weak label] (error) in
+            DispatchQueue.main.async { [weak label] in
+                label?.stringValue = error.localizedDescription
+            }
+        } as? XPCServiceDemoSwiftService.XPCServiceDemoSwiftServiceProtocol
 
         service?.upperCaseString(string, withReply: { [weak label] (result) in
             DispatchQueue.main.async { [weak label] in

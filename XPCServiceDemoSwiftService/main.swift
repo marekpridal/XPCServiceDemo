@@ -21,3 +21,4 @@ let delegate = MyServiceDelegate()
 let listener = NSXPCListener.service()
 listener.delegate = delegate
 listener.resume()
+// RunLoop.main.run() Not sure if necessary
