@@ -8,7 +8,12 @@
 #import "Constants.h"
 #import "ViewController.h"
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
-#import "XPCServiceDemo-Bridging-Header.h"
+#import "XPCServiceDemo-Swift.h"
+#import "XPCServiceDemoSwiftService.h"
+//#import "XPCServiceDemoSwiftService-Swift.h"
+
+@import XPCServiceDemo;
+//@import XPCServiceDemoSwiftService;
 
 @interface ViewController()
 
@@ -78,6 +83,10 @@
 
 - (IBAction)invalidateConnectionButtonPressed:(NSButton *)sender {
     [self.connectionToService invalidate];
+}
+
+- (IBAction)swiftButtonPressed:(NSButton *)sender {
+    
 }
 
 - (void)establishXPCConnection {
