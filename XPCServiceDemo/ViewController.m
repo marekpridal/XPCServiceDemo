@@ -9,11 +9,6 @@
 #import "ViewController.h"
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
 #import "XPCServiceDemo-Swift.h"
-#import "XPCServiceDemoSwiftService.h"
-//#import "XPCServiceDemoSwiftService-Swift.h"
-
-@import XPCServiceDemo;
-//@import XPCServiceDemoSwiftService;
 
 @interface ViewController()
 

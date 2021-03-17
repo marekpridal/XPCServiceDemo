@@ -22,7 +22,7 @@
 		DF3D61672602306B0015A7E7 /* XPCServiceDemoSwiftService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = DF3D615C2602306B0015A7E7 /* XPCServiceDemoSwiftService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DF8FC16E2602348B00586A28 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC16D2602348B00586A28 /* SwiftViewController.swift */; };
 		DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */; };
-		DF8FC1F82602437100586A28 /* XPCServiceDemoSwiftService.h in Headers */ = {isa = PBXBuildFile; fileRef = DF8FC184260236C300586A28 /* XPCServiceDemoSwiftService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF8FC24F26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,13 +98,11 @@
 		DF3D614926022FAA0015A7E7 /* XPCServiceDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF3D614A26022FAA0015A7E7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		DF3D615C2602306B0015A7E7 /* XPCServiceDemoSwiftService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCServiceDemoSwiftService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF3D615E2602306B0015A7E7 /* XPCServiceDemoSwiftServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoSwiftServiceProtocol.h; sourceTree = "<group>"; };
 		DF3D61622602306B0015A7E7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DF3D61642602306B0015A7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF8FC16D2602348B00586A28 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
-		DF8FC184260236C300586A28 /* XPCServiceDemoSwiftService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoSwiftService.h; sourceTree = "<group>"; };
-		DF8FC1C826023AA000586A28 /* XPCServiceDemoSwiftService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemoSwiftService-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceModel.swift; sourceTree = "<group>"; };
+		DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,10 +231,8 @@
 			children = (
 				DF3D61642602306B0015A7E7 /* Info.plist */,
 				DF3D61622602306B0015A7E7 /* main.swift */,
-				DF8FC1C826023AA000586A28 /* XPCServiceDemoSwiftService-Bridging-Header.h */,
-				DF8FC184260236C300586A28 /* XPCServiceDemoSwiftService.h */,
 				DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */,
-				DF3D615E2602306B0015A7E7 /* XPCServiceDemoSwiftServiceProtocol.h */,
+				DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */,
 			);
 			path = XPCServiceDemoSwiftService;
 			sourceTree = "<group>";
@@ -248,7 +244,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8FC1F82602437100586A28 /* XPCServiceDemoSwiftService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +475,7 @@
 			files = (
 				DF3D61632602306B0015A7E7 /* main.swift in Sources */,
 				DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */,
+				DF8FC24F26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,7 +803,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoSwiftService/XPCServiceDemoSwiftService-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -830,7 +825,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoSwiftService/XPCServiceDemoSwiftService-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 			};
