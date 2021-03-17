@@ -54,7 +54,12 @@
     NSLog(@"firstButtonPressed");
     
     ViewController *__weak weakSelf = self;
-    [[_connectionToService remoteObjectProxy] upperCaseString:@"hello" withReply:^(NSString *aString) {
+    [[_connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf2.label setStringValue:error.localizedDescription];
+        });
+    }] upperCaseString:@"hello" withReply:^(NSString *aString) {
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf2.label setStringValue:aString];
