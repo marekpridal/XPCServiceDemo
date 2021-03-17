@@ -82,10 +82,6 @@
     [self.connectionToService invalidate];
 }
 
-- (IBAction)swiftButtonPressed:(NSButton *)sender {
-    
-}
-
 - (void)establishXPCConnection {
     NSXPCConnection *connectionToService = [[NSXPCConnection alloc] initWithServiceName:XPCServiceDemoTitleLabelServiceName];
     connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
