@@ -63,7 +63,7 @@ final class SwiftViewController: NSViewController {
                 connectionStatus?.stringValue = "Connection has been interrupted but still valid."
             }
         }
-        connection.invalidationHandler = {[weak connectionStatus] in
+        connection.invalidationHandler = { [weak connectionStatus] in
             DispatchQueue.main.async { [weak connectionStatus] in
                 connectionStatus?.stringValue = "Connection has been invalidated. Need to reestablish connection."
             }
