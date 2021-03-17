@@ -8,6 +8,7 @@
 #import "Constants.h"
 #import "ViewController.h"
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
+#import "XPCServiceDemo-Bridging-Header.h"
 
 @interface ViewController()
 
