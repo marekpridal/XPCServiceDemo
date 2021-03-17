@@ -22,7 +22,7 @@
 		DF8FC16E2602348B00586A28 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC16D2602348B00586A28 /* SwiftViewController.swift */; };
 		DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */; };
 		DF8FC24F26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */; };
-		DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */; };
+		DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 		DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceModel.swift; sourceTree = "<group>"; };
 		DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceProtocol.swift; sourceTree = "<group>"; };
 		DF8FC2B4260270FE00586A28 /* XPCServiceDemoTitleLabelService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemoTitleLabelService-Bridging-Header.h"; sourceTree = "<group>"; };
-		DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XPCServiceDemoTitleLabelService+Extensions.swift"; sourceTree = "<group>"; };
+		DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoTitleLabelService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +212,7 @@
 				DF27945B26020FE100EA3D9E /* Info.plist */,
 				DF27945926020FE100EA3D9E /* main.m */,
 				DF8FC2B4260270FE00586A28 /* XPCServiceDemoTitleLabelService-Bridging-Header.h */,
-				DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */,
+				DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift */,
 				DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */,
 			);
 			path = XPCServiceDemoTitleLabelService;
@@ -465,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift in Sources */,
+				DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift in Sources */,
 				DF27945A26020FE100EA3D9E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
