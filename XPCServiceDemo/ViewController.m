@@ -13,7 +13,7 @@
 #import "XPCServiceDemoSwiftServiceProtocol.h" // This works
 
 @import XPCServiceDemo; // This works
-//@import XPCServiceDemoSwiftService; // This doesn't work!!
+@import XPCServiceDemoSwiftService; // This doesn't work!!
 @import XPCTestFramework; // This works
 
 @interface ViewController()
