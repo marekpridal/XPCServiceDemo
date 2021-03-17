@@ -39,6 +39,8 @@
     [self.clearButton setTitle:@"Clear button"];
     NSClickGestureRecognizer* clearButtonRecognizer = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(clearButtonPressed)];
     [self.clearButton addGestureRecognizer:clearButtonRecognizer];
+
+    [self showSwiftWindowViewController];
 }
 
 -(void)dealloc {
@@ -103,6 +105,11 @@
             [[weakSelf2 connectionStatus] setStringValue:@"Connection has been interrupted but still valid."];
         });
     }];
+}
+
+- (void)showSwiftWindowViewController {
+    NSWindowController *windowController = [self.storyboard instantiateControllerWithIdentifier:@"SwiftWindowController"];
+    [windowController.window makeKeyAndOrderFront:self];
 }
 
 @end
