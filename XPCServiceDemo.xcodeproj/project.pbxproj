@@ -14,6 +14,9 @@
 		DF27942926020B7900EA3D9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27942826020B7900EA3D9E /* main.m */; };
 		DF27943426020B7A00EA3D9E /* XPCServiceDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27943326020B7A00EA3D9E /* XPCServiceDemoTests.m */; };
 		DF27943F26020B7A00EA3D9E /* XPCServiceDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27943E26020B7A00EA3D9E /* XPCServiceDemoUITests.m */; };
+		DF27945826020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */; };
+		DF27945A26020FE100EA3D9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27945926020FE100EA3D9E /* main.m */; };
+		DF27945E26020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +34,28 @@
 			remoteGlobalIDString = DF27941826020B7800EA3D9E;
 			remoteInfo = XPCServiceDemo;
 		};
+		DF27945C26020FE100EA3D9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF27941126020B7800EA3D9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF27945226020FE100EA3D9E;
+			remoteInfo = XPCServiceDemoTitleLabelService;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF27946226020FE100EA3D9E /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				DF27945E26020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DF27941926020B7800EA3D9E /* XPCServiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPCServiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +74,12 @@
 		DF27943A26020B7A00EA3D9E /* XPCServiceDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XPCServiceDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF27943E26020B7A00EA3D9E /* XPCServiceDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPCServiceDemoUITests.m; sourceTree = "<group>"; };
 		DF27944026020B7A00EA3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCServiceDemoTitleLabelService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoTitleLabelServiceProtocol.h; sourceTree = "<group>"; };
+		DF27945626020FE100EA3D9E /* XPCServiceDemoTitleLabelService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoTitleLabelService.h; sourceTree = "<group>"; };
+		DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPCServiceDemoTitleLabelService.m; sourceTree = "<group>"; };
+		DF27945926020FE100EA3D9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF27945B26020FE100EA3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +104,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF27945026020FE100EA3D9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +120,7 @@
 				DF27941B26020B7800EA3D9E /* XPCServiceDemo */,
 				DF27943226020B7A00EA3D9E /* XPCServiceDemoTests */,
 				DF27943D26020B7A00EA3D9E /* XPCServiceDemoUITests */,
+				DF27945426020FE100EA3D9E /* XPCServiceDemoTitleLabelService */,
 				DF27941A26020B7800EA3D9E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +131,7 @@
 				DF27941926020B7800EA3D9E /* XPCServiceDemo.app */,
 				DF27942F26020B7A00EA3D9E /* XPCServiceDemoTests.xctest */,
 				DF27943A26020B7A00EA3D9E /* XPCServiceDemoUITests.xctest */,
+				DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +170,18 @@
 			path = XPCServiceDemoUITests;
 			sourceTree = "<group>";
 		};
+		DF27945426020FE100EA3D9E /* XPCServiceDemoTitleLabelService */ = {
+			isa = PBXGroup;
+			children = (
+				DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */,
+				DF27945626020FE100EA3D9E /* XPCServiceDemoTitleLabelService.h */,
+				DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */,
+				DF27945926020FE100EA3D9E /* main.m */,
+				DF27945B26020FE100EA3D9E /* Info.plist */,
+			);
+			path = XPCServiceDemoTitleLabelService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,10 +192,12 @@
 				DF27941526020B7800EA3D9E /* Sources */,
 				DF27941626020B7800EA3D9E /* Frameworks */,
 				DF27941726020B7800EA3D9E /* Resources */,
+				DF27946226020FE100EA3D9E /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF27945D26020FE100EA3D9E /* PBXTargetDependency */,
 			);
 			name = XPCServiceDemo;
 			productName = XPCServiceDemo;
@@ -187,6 +240,23 @@
 			productReference = DF27943A26020B7A00EA3D9E /* XPCServiceDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DF27945226020FE100EA3D9E /* XPCServiceDemoTitleLabelService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF27945F26020FE100EA3D9E /* Build configuration list for PBXNativeTarget "XPCServiceDemoTitleLabelService" */;
+			buildPhases = (
+				DF27944F26020FE100EA3D9E /* Sources */,
+				DF27945026020FE100EA3D9E /* Frameworks */,
+				DF27945126020FE100EA3D9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XPCServiceDemoTitleLabelService;
+			productName = XPCServiceDemoTitleLabelService;
+			productReference = DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +276,9 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = DF27941826020B7800EA3D9E;
 					};
+					DF27945226020FE100EA3D9E = {
+						CreatedOnToolsVersion = 12.4;
+					};
 				};
 			};
 			buildConfigurationList = DF27941426020B7800EA3D9E /* Build configuration list for PBXProject "XPCServiceDemo" */;
@@ -224,6 +297,7 @@
 				DF27941826020B7800EA3D9E /* XPCServiceDemo */,
 				DF27942E26020B7A00EA3D9E /* XPCServiceDemoTests */,
 				DF27943926020B7A00EA3D9E /* XPCServiceDemoUITests */,
+				DF27945226020FE100EA3D9E /* XPCServiceDemoTitleLabelService */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +320,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DF27943826020B7A00EA3D9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF27945126020FE100EA3D9E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +362,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF27944F26020FE100EA3D9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF27945A26020FE100EA3D9E /* main.m in Sources */,
+				DF27945826020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +383,11 @@
 			isa = PBXTargetDependency;
 			target = DF27941826020B7800EA3D9E /* XPCServiceDemo */;
 			targetProxy = DF27943B26020B7A00EA3D9E /* PBXContainerItemProxy */;
+		};
+		DF27945D26020FE100EA3D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF27945226020FE100EA3D9E /* XPCServiceDemoTitleLabelService */;
+			targetProxy = DF27945C26020FE100EA3D9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,6 +630,34 @@
 			};
 			name = Release;
 		};
+		DF27946026020FE100EA3D9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JV7TARSQ32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoTitleLabelService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DF27946126020FE100EA3D9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JV7TARSQ32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoTitleLabelService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -570,6 +693,15 @@
 			buildConfigurations = (
 				DF27944A26020B7A00EA3D9E /* Debug */,
 				DF27944B26020B7A00EA3D9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF27945F26020FE100EA3D9E /* Build configuration list for PBXNativeTarget "XPCServiceDemoTitleLabelService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF27946026020FE100EA3D9E /* Debug */,
+				DF27946126020FE100EA3D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
