@@ -6,7 +6,7 @@
 //
 
 import AppKit
-import XPCServiceDemoSwiftService
+import XPCServiceDemoSwiftService // Show warning module of implicitly importing bridging header via module XPCServiceDemoSwiftService
 
 final class SwiftViewController: NSViewController {
     

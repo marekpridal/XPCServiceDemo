@@ -23,6 +23,10 @@
 		DF8FC16E2602348B00586A28 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC16D2602348B00586A28 /* SwiftViewController.swift */; };
 		DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */; };
 		DF8FC1F82602437100586A28 /* XPCServiceDemoSwiftService.h in Headers */ = {isa = PBXBuildFile; fileRef = DF8FC184260236C300586A28 /* XPCServiceDemoSwiftService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF8FC20C2602453300586A28 /* XPCTestFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = DF8FC20A2602453300586A28 /* XPCTestFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF8FC20F2602453300586A28 /* XPCTestFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8FC2082602453300586A28 /* XPCTestFramework.framework */; };
+		DF8FC2102602453300586A28 /* XPCTestFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF8FC2082602453300586A28 /* XPCTestFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF8FC21B2602457C00586A28 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC21A2602457C00586A28 /* TestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,13 @@
 			remoteGlobalIDString = DF3D615B2602306B0015A7E7;
 			remoteInfo = XPCServiceDemoSwiftService;
 		};
+		DF8FC20D2602453300586A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF27941126020B7800EA3D9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF8FC2072602453300586A28;
+			remoteInfo = XPCTestFramework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +78,17 @@
 				DF27945E26020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF8FC2142602453300586A28 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF8FC2102602453300586A28 /* XPCTestFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -105,6 +127,10 @@
 		DF8FC184260236C300586A28 /* XPCServiceDemoSwiftService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoSwiftService.h; sourceTree = "<group>"; };
 		DF8FC1C826023AA000586A28 /* XPCServiceDemoSwiftService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemoSwiftService-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceModel.swift; sourceTree = "<group>"; };
+		DF8FC2082602453300586A28 /* XPCTestFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPCTestFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF8FC20A2602453300586A28 /* XPCTestFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCTestFramework.h; sourceTree = "<group>"; };
+		DF8FC20B2602453300586A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF8FC21A2602457C00586A28 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8FC20F2602453300586A28 /* XPCTestFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +170,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF8FC2052602453300586A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -154,6 +188,7 @@
 				DF27943D26020B7A00EA3D9E /* XPCServiceDemoUITests */,
 				DF27945426020FE100EA3D9E /* XPCServiceDemoTitleLabelService */,
 				DF3D615D2602306B0015A7E7 /* XPCServiceDemoSwiftService */,
+				DF8FC2092602453300586A28 /* XPCTestFramework */,
 				DF27941A26020B7800EA3D9E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +201,7 @@
 				DF27943A26020B7A00EA3D9E /* XPCServiceDemoUITests.xctest */,
 				DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */,
 				DF3D615C2602306B0015A7E7 /* XPCServiceDemoSwiftService.xpc */,
+				DF8FC2082602453300586A28 /* XPCTestFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +277,16 @@
 			path = XPCServiceDemoSwiftService;
 			sourceTree = "<group>";
 		};
+		DF8FC2092602453300586A28 /* XPCTestFramework */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FC20A2602453300586A28 /* XPCTestFramework.h */,
+				DF8FC20B2602453300586A28 /* Info.plist */,
+				DF8FC21A2602457C00586A28 /* TestClass.swift */,
+			);
+			path = XPCTestFramework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -249,6 +295,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8FC1F82602437100586A28 /* XPCServiceDemoSwiftService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF8FC2032602453300586A28 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF8FC20C2602453300586A28 /* XPCTestFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,12 +317,14 @@
 				DF27941626020B7800EA3D9E /* Frameworks */,
 				DF27941726020B7800EA3D9E /* Resources */,
 				DF27946226020FE100EA3D9E /* Embed XPC Services */,
+				DF8FC2142602453300586A28 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DF27945D26020FE100EA3D9E /* PBXTargetDependency */,
 				DF3D61662602306B0015A7E7 /* PBXTargetDependency */,
+				DF8FC20E2602453300586A28 /* PBXTargetDependency */,
 			);
 			name = XPCServiceDemo;
 			productName = XPCServiceDemo;
@@ -346,6 +402,24 @@
 			productReference = DF3D615C2602306B0015A7E7 /* XPCServiceDemoSwiftService.xpc */;
 			productType = "com.apple.product-type.xpc-service";
 		};
+		DF8FC2072602453300586A28 /* XPCTestFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF8FC2112602453300586A28 /* Build configuration list for PBXNativeTarget "XPCTestFramework" */;
+			buildPhases = (
+				DF8FC2032602453300586A28 /* Headers */,
+				DF8FC2042602453300586A28 /* Sources */,
+				DF8FC2052602453300586A28 /* Frameworks */,
+				DF8FC2062602453300586A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XPCTestFramework;
+			productName = XPCTestFramework;
+			productReference = DF8FC2082602453300586A28 /* XPCTestFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -372,6 +446,10 @@
 					DF3D615B2602306B0015A7E7 = {
 						CreatedOnToolsVersion = 12.4;
 					};
+					DF8FC2072602453300586A28 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
 				};
 			};
 			buildConfigurationList = DF27941426020B7800EA3D9E /* Build configuration list for PBXProject "XPCServiceDemo" */;
@@ -392,6 +470,7 @@
 				DF27943926020B7A00EA3D9E /* XPCServiceDemoUITests */,
 				DF27945226020FE100EA3D9E /* XPCServiceDemoTitleLabelService */,
 				DF3D615B2602306B0015A7E7 /* XPCServiceDemoSwiftService */,
+				DF8FC2072602453300586A28 /* XPCTestFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -428,6 +507,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DF3D615A2602306B0015A7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF8FC2062602453300586A28 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,6 +569,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF8FC2042602453300586A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF8FC21B2602457C00586A28 /* TestClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -505,6 +599,11 @@
 			isa = PBXTargetDependency;
 			target = DF3D615B2602306B0015A7E7 /* XPCServiceDemoSwiftService */;
 			targetProxy = DF3D61652602306B0015A7E7 /* PBXContainerItemProxy */;
+		};
+		DF8FC20E2602453300586A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF8FC2072602453300586A28 /* XPCTestFramework */;
+			targetProxy = DF8FC20D2602453300586A28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -634,6 +733,7 @@
 		DF27944426020B7A00EA3D9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -659,6 +759,7 @@
 		DF27944526020B7A00EA3D9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -797,6 +898,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoSwiftService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -806,7 +909,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoSwiftService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoSwiftService/XPCServiceDemoSwiftService-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
@@ -820,6 +923,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoSwiftService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -829,10 +934,67 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoSwiftService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoSwiftService/XPCServiceDemoSwiftService-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DF8FC2122602453300586A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JV7TARSQ32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = XPCTestFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCTestFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DF8FC2132602453300586A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JV7TARSQ32;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = XPCTestFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCTestFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -889,6 +1051,15 @@
 			buildConfigurations = (
 				DF3D61692602306B0015A7E7 /* Debug */,
 				DF3D616A2602306B0015A7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF8FC2112602453300586A28 /* Build configuration list for PBXNativeTarget "XPCTestFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF8FC2122602453300586A28 /* Debug */,
+				DF8FC2132602453300586A28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,5 +16,3 @@ FOUNDATION_EXPORT const unsigned char XPCServiceDemoSwiftServiceVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <XPCServiceDemoSwiftService/PublicHeader.h>
 
 #import "XPCServiceDemoSwiftServiceProtocol.h"
-//#import "XPCServiceDemoSwiftServiceModel.h"
-//#import "XPCServiceDemoSwiftService-Swift.h"

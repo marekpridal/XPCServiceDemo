@@ -10,10 +10,11 @@
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
 #import "XPCServiceDemo-Swift.h"
 #import "XPCServiceDemoSwiftService.h"
-//#import "XPCServiceDemoSwiftService-Swift.h"
+#import "XPCServiceDemoSwiftServiceProtocol.h" // This works
 
-@import XPCServiceDemo;
-//@import XPCServiceDemoSwiftService;
+@import XPCServiceDemo; // This works
+//@import XPCServiceDemoSwiftService; // This doesn't work!!
+@import XPCTestFramework; // This works
 
 @interface ViewController()
 
@@ -86,7 +87,8 @@
 }
 
 - (IBAction)swiftButtonPressed:(NSButton *)sender {
-    
+    // Swift class from TestFrameworks successfully works and can be initialized
+    TestClass *class = TestClass.new;
 }
 
 - (void)establishXPCConnection {
