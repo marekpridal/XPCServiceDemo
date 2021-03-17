@@ -22,7 +22,7 @@
 		DF8FC16E2602348B00586A28 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC16D2602348B00586A28 /* SwiftViewController.swift */; };
 		DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */; };
 		DF8FC24F26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */; };
-		DF8FC2A426026C8200586A28 /* XPCServiceDemoTitleLabelService.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */; };
+		DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +90,6 @@
 		DF27944026020B7A00EA3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF27945326020FE100EA3D9E /* XPCServiceDemoTitleLabelService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCServiceDemoTitleLabelService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoTitleLabelServiceProtocol.h; sourceTree = "<group>"; };
-		DF27945626020FE100EA3D9E /* XPCServiceDemoTitleLabelService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoTitleLabelService.h; sourceTree = "<group>"; };
-		DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPCServiceDemoTitleLabelService.m; sourceTree = "<group>"; };
 		DF27945926020FE100EA3D9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF27945B26020FE100EA3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF27946C2602149000EA3D9E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		DF8FC16D2602348B00586A28 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceModel.swift; sourceTree = "<group>"; };
 		DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceProtocol.swift; sourceTree = "<group>"; };
+		DF8FC2B4260270FE00586A28 /* XPCServiceDemoTitleLabelService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemoTitleLabelService-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XPCServiceDemoTitleLabelService+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,11 +209,11 @@
 		DF27945426020FE100EA3D9E /* XPCServiceDemoTitleLabelService */ = {
 			isa = PBXGroup;
 			children = (
-				DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */,
-				DF27945626020FE100EA3D9E /* XPCServiceDemoTitleLabelService.h */,
-				DF27945726020FE100EA3D9E /* XPCServiceDemoTitleLabelService.m */,
-				DF27945926020FE100EA3D9E /* main.m */,
 				DF27945B26020FE100EA3D9E /* Info.plist */,
+				DF27945926020FE100EA3D9E /* main.m */,
+				DF8FC2B4260270FE00586A28 /* XPCServiceDemoTitleLabelService-Bridging-Header.h */,
+				DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift */,
+				DF27945526020FE100EA3D9E /* XPCServiceDemoTitleLabelServiceProtocol.h */,
 			);
 			path = XPCServiceDemoTitleLabelService;
 			sourceTree = "<group>";
@@ -363,6 +363,7 @@
 					};
 					DF27945226020FE100EA3D9E = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					DF3D615B2602306B0015A7E7 = {
 						CreatedOnToolsVersion = 12.4;
@@ -464,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8FC2A426026C8200586A28 /* XPCServiceDemoTitleLabelService.m in Sources */,
+				DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService+Extensions.swift in Sources */,
 				DF27945A26020FE100EA3D9E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +631,7 @@
 		DF27944426020B7A00EA3D9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -655,6 +657,7 @@
 		DF27944526020B7A00EA3D9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -759,30 +762,47 @@
 		DF27946026020FE100EA3D9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoTitleLabelService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoTitleLabelService/XPCServiceDemoTitleLabelService-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		DF27946126020FE100EA3D9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JV7TARSQ32;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCServiceDemoTitleLabelService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = eu.marekpridal.XPCServiceDemoTitleLabelService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XPCServiceDemoTitleLabelService/XPCServiceDemoTitleLabelService-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

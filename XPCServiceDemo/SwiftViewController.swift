@@ -89,7 +89,7 @@ final class SwiftViewController: NSViewController {
 
         service?.upperCaseString(string, withReply: { [weak label] (result) in
             DispatchQueue.main.async { [weak label] in
-                label?.stringValue = result ?? ""
+                label?.stringValue = result
             }
         })
     }

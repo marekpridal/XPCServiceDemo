@@ -6,15 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 // The protocol that this service will vend as its API. This header file will also need to be visible to the process hosting the service.
 @protocol XPCServiceDemoTitleLabelServiceProtocol
 
 // Replace the API of this protocol with an API appropriate to the service you are vending.
 - (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
-    
-@end
+- (void)lowerCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
 
+@end
+NS_ASSUME_NONNULL_END
 /*
  To use the service from an application or other process, use NSXPCConnection to establish a connection to the service by doing something like this:
 

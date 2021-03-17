@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XPCServiceDemoTitleLabelService.h"
+#import "XPCServiceDemoTitleLabelService-Swift.h"
 
 @interface ServiceDelegate : NSObject <NSXPCListenerDelegate>
 @end
