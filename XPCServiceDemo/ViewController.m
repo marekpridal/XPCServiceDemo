@@ -89,7 +89,13 @@
     [_connectionToService setInvalidationHandler:^{
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[weakSelf2 connectionStatus] setStringValue:@"Connection has been invalidated"];
+            [[weakSelf2 connectionStatus] setStringValue:@"Connection has been invalidated. Need to reestablish connection."];
+        });
+    }];
+    [_connectionToService setInterruptionHandler:^{
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[weakSelf2 connectionStatus] setStringValue:@"Connection has been interrupted but still valid."];
         });
     }];
 }
