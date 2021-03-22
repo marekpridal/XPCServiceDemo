@@ -20,6 +20,7 @@
 @property (weak) IBOutlet NSButton *establishConnectionButton;
 @property (weak) IBOutlet NSButton *invalidateConnectionButton;
 @property (weak) IBOutlet NSButton *dogButton;
+@property (weak) IBOutlet NSButton *dogsButton;
 
 @end
 
@@ -42,6 +43,7 @@
     [self.clearButton addGestureRecognizer:clearButtonRecognizer];
 
     [self.dogButton setTitle:@"Dog button"];
+    [self.dogsButton setTitle:@"Dogs button"];
 
     [self showSwiftWindowViewController];
 }
@@ -99,10 +101,47 @@
         });
     }];
 }
+- (IBAction)dogsButtonPressed:(NSButton *)sender {
+    ViewController *__weak weakSelf = self;
+    NSArray *dogs = [NSArray arrayWithObjects:[[Dog alloc] initWithName:@"Mac"], [[Dog alloc] initWithName:@"Swift"], nil];
+    
+//    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf2.label setStringValue:error.localizedDescription];
+//        });
+//    }] dogNameForDog:[[Dog alloc] initWithName:@"Mac"] withReply:^(NSString * _Nonnull aString) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf2.label setStringValue:aString];
+//        });
+//    }];
+    
+    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf2.label setStringValue:error.localizedDescription];
+        });
+    }] dogNamesForDogs:dogs withReply:^(NSArray<NSString*> * response) {
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSMutableString * names = [NSMutableString stringWithString:@""];
+            [response enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [names appendString:obj];
+                [names appendString:@"\n"];
+            }];
+            [weakSelf2.label setStringValue:names];
+        });
+    }];
+}
 
 - (void)establishXPCConnection {
     NSXPCConnection *connectionToService = [[NSXPCConnection alloc] initWithServiceName:XPCServiceDemoTitleLabelServiceName];
-    connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    
+    NSXPCInterface * interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(dogNamesForDogs:withReply:) argumentIndex:0 ofReply:NO];
+    
+    connectionToService.remoteObjectInterface = interface;
     [connectionToService resume];
     [self.connectionStatus setStringValue:[NSString stringWithFormat:@"Connected to service %@", connectionToService.serviceName]];
     
@@ -126,6 +165,10 @@
 - (void)showSwiftWindowViewController {
     NSWindowController *windowController = [self.storyboard instantiateControllerWithIdentifier:@"SwiftWindowController"];
     [windowController.window makeKeyAndOrderFront:self];
+}
+
+- (NSSet<NSSecureCoding> *)getParameterDataTypes {
+    return [NSSet setWithObjects:NSArray.class, Dog.class, nil];
 }
 
 @end

@@ -18,7 +18,11 @@
     
     // Configure the connection.
     // First, set the interface that the exported object implements.
-    newConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    
+    NSXPCInterface * interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(dogNamesForDogs:withReply:) argumentIndex:0 ofReply:NO];
+    
+    newConnection.exportedInterface = interface;
     
     // Next, set the object that the connection exports. All messages sent on the connection to this service will be sent to the exported object to handle. The connection retains the exported object.
     XPCServiceDemoTitleLabelService *exportedObject = [XPCServiceDemoTitleLabelService new];
@@ -29,6 +33,10 @@
     
     // Returning YES from this method tells the system that you have accepted this connection. If you want to reject the connection for some reason, call -invalidate on the connection and return NO.
     return YES;
+}
+
+- (NSSet<NSSecureCoding> *)getParameterDataTypes {
+    return [NSSet setWithObjects:NSArray.class, Dog.class, nil];
 }
 
 @end

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
 - (void)lowerCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
 - (void)dogNameForDog:(Dog *)aDog withReply:(void (^) (NSString*))reply;
+- (void)dogNamesForDogs:(NSArray<Dog *>*)dogs withReply:(void (^) (NSArray<NSString*>*))reply;
 
 @end
 NS_ASSUME_NONNULL_END
