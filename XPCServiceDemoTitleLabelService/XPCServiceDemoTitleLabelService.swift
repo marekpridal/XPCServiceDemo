@@ -9,6 +9,10 @@ import Foundation
 
 @objc
 final class XPCServiceDemoTitleLabelService: NSObject, XPCServiceDemoTitleLabelServiceProtocol {
+    func setDogAgeFor(_ aDog: Dog, withReply reply: @escaping (Dog) -> Void) {
+        reply(.init(name: aDog.name, age: 10))
+    }
+
     func dogNames(for dogs: [Dog], withReply reply: @escaping ([String]) -> Void) {
         reply(dogs.map { $0.name })
     }

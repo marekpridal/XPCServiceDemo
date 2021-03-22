@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Replace the API of this protocol with an API appropriate to the service you are vending.
 - (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
 - (void)lowerCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
-- (void)dogNameForDog:(Dog *)aDog withReply:(void (^) (NSString*))reply;
-- (void)dogNamesForDogs:(NSArray<Dog *>*)dogs withReply:(void (^) (NSArray<NSString*>*))reply;
+- (void)dogNameForDog:(Dog *)aDog withReply:(void (^) (NSString *))reply;
+- (void)dogNamesForDogs:(NSArray<Dog *>*)dogs withReply:(void (^) (NSArray<NSString*> *))reply;
+- (void)setDogAgeForDog:(Dog *)aDog withReply:(void (^) (Dog *))reply;
 
 @end
 NS_ASSUME_NONNULL_END
