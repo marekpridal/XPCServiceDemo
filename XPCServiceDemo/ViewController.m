@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSTextField *connectionStatus;
 @property (weak) IBOutlet NSButton *establishConnectionButton;
 @property (weak) IBOutlet NSButton *invalidateConnectionButton;
+@property (weak) IBOutlet NSButton *dogButton;
 
 @end
 
@@ -39,6 +40,8 @@
     [self.clearButton setTitle:@"Clear button"];
     NSClickGestureRecognizer* clearButtonRecognizer = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(clearButtonPressed)];
     [self.clearButton addGestureRecognizer:clearButtonRecognizer];
+
+    [self.dogButton setTitle:@"Dog button"];
 
     [self showSwiftWindowViewController];
 }
@@ -80,6 +83,21 @@
 
 - (IBAction)invalidateConnectionButtonPressed:(NSButton *)sender {
     [self.connectionToService invalidate];
+}
+
+- (IBAction)dogButtonPressed:(NSButton *)sender {
+    ViewController *__weak weakSelf = self;
+    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf2.label setStringValue:error.localizedDescription];
+        });
+    }] dogNameForDog:[[Dog alloc] initWithName:@"Mac"] withReply:^(NSString * _Nonnull aString) {
+        ViewController *__weak weakSelf2 = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf2.label setStringValue:aString];
+        });
+    }];
 }
 
 - (void)establishXPCConnection {

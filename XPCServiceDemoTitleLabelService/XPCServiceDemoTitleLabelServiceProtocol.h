@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Dog.h"
+
 NS_ASSUME_NONNULL_BEGIN
 // The protocol that this service will vend as its API. This header file will also need to be visible to the process hosting the service.
 @protocol XPCServiceDemoTitleLabelServiceProtocol
@@ -13,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Replace the API of this protocol with an API appropriate to the service you are vending.
 - (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
 - (void)lowerCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
+- (void)dogNameForDog:(Dog *)aDog withReply:(void (^) (NSString*))reply;
 
 @end
 NS_ASSUME_NONNULL_END

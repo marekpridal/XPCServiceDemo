@@ -9,6 +9,10 @@ import Foundation
 
 @objc
 final class XPCServiceDemoTitleLabelService: NSObject, XPCServiceDemoTitleLabelServiceProtocol {
+    func dogName(for aDog: Dog, withReply reply: @escaping (String) -> Void) {
+        reply(aDog.name)
+    }
+
     func upperCaseString(_ aString: String, withReply reply: @escaping (String) -> Void) {
         reply(aString.uppercased())
     }

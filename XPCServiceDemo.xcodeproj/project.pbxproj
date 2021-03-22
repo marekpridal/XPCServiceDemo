@@ -23,6 +23,8 @@
 		DF8FC1D926023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1D826023CED00586A28 /* XPCServiceDemoSwiftServiceModel.swift */; };
 		DF8FC24F26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */; };
 		DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift */; };
+		DFFDFF182608B98500D38BA6 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDFF172608B98500D38BA6 /* Dog.m */; };
+		DFFDFF1E2608BA1B00D38BA6 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDFF172608B98500D38BA6 /* Dog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		DF8FC24E26024E4200586A28 /* XPCServiceDemoSwiftServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoSwiftServiceProtocol.swift; sourceTree = "<group>"; };
 		DF8FC2B4260270FE00586A28 /* XPCServiceDemoTitleLabelService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCServiceDemoTitleLabelService-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF8FC2B5260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServiceDemoTitleLabelService.swift; sourceTree = "<group>"; };
+		DFFDFF162608B98500D38BA6 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		DFFDFF172608B98500D38BA6 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				DF3D614A26022FAA0015A7E7 /* Car.swift */,
+				DFFDFF162608B98500D38BA6 /* Dog.h */,
+				DFFDFF172608B98500D38BA6 /* Dog.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFDFF182608B98500D38BA6 /* Dog.m in Sources */,
 				DF27942126020B7800EA3D9E /* ViewController.m in Sources */,
 				DF27942926020B7900EA3D9E /* main.m in Sources */,
 				DF3D614B26022FAA0015A7E7 /* Car.swift in Sources */,
@@ -465,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFDFF1E2608BA1B00D38BA6 /* Dog.m in Sources */,
 				DF8FC2B6260270FE00586A28 /* XPCServiceDemoTitleLabelService.swift in Sources */,
 				DF27945A26020FE100EA3D9E /* main.m in Sources */,
 			);

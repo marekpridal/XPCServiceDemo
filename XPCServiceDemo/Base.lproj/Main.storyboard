@@ -843,7 +843,7 @@
                                 <rect key="frame" x="0.0" y="50" width="630" height="330"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lG-jR-ZBg">
-                                        <rect key="frame" x="179" y="48" width="272" height="282"/>
+                                        <rect key="frame" x="144" y="48" width="342" height="282"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-V5-ScV">
                                                 <rect key="frame" x="-7" y="255" width="76" height="32"/>
@@ -872,8 +872,18 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F3y-vF-KGg">
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Me-4t-A6w">
                                                 <rect key="frame" x="203" y="255" width="76" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gyK-y0-2Hn">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="dogButtonPressed:" target="XfG-lQ-9wD" id="UII-Ju-GKW"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F3y-vF-KGg">
+                                                <rect key="frame" x="273" y="255" width="76" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fBr-J0-RlA">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -885,8 +895,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -932,6 +944,7 @@
                     <connections>
                         <outlet property="clearButton" destination="F3y-vF-KGg" id="PbA-RC-fVG"/>
                         <outlet property="connectionStatus" destination="yEW-M2-EXC" id="vuR-mg-vNn"/>
+                        <outlet property="dogButton" destination="1Me-4t-A6w" id="WaP-5Q-5gT"/>
                         <outlet property="establishConnectionButton" destination="qJx-V5-ScV" id="OB4-8g-7dx"/>
                         <outlet property="firstButton" destination="TWF-L4-CY1" id="l9F-Oj-q63"/>
                         <outlet property="invalidateConnectionButton" destination="G2b-Yt-2fv" id="XaQ-Sy-8hC"/>
