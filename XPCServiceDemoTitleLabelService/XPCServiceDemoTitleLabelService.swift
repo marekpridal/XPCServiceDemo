@@ -9,6 +9,10 @@ import Foundation
 
 @objc
 final class XPCServiceDemoTitleLabelService: NSObject, XPCServiceDemoTitleLabelServiceProtocol {
+    func setDogAgeFor(_ dogs: [Dog], withReply reply: @escaping ([Dog]) -> Void) {
+        reply(dogs.map { Dog(name: $0.name, age: NSNumber(integerLiteral: Int.random(in: 1...10))) })
+    }
+
     func setDogAgeFor(_ aDog: Dog, withReply reply: @escaping (Dog) -> Void) {
         reply(.init(name: aDog.name, age: 10))
     }

@@ -130,17 +130,34 @@
 //        });
 //    }];
     
+//    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf2.label setStringValue:error.localizedDescription];
+//        });
+//    }] dogNamesForDogs:dogs withReply:^(NSArray<NSString*> * response) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSMutableString * names = [NSMutableString stringWithString:@""];
+//            [response enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                [names appendString:obj];
+//                [names appendString:@"\n"];
+//            }];
+//            [weakSelf2.label setStringValue:names];
+//        });
+//    }];
+
     [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf2.label setStringValue:error.localizedDescription];
         });
-    }] dogNamesForDogs:dogs withReply:^(NSArray<NSString*> * response) {
+    }] setDogAgeForDogs:dogs withReply:^(NSArray<Dog*> * response) {
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSMutableString * names = [NSMutableString stringWithString:@""];
-            [response enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                [names appendString:obj];
+            [response enumerateObjectsUsingBlock:^(Dog * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [names appendString:obj.formattedNameWithAge];
                 [names appendString:@"\n"];
             }];
             [weakSelf2.label setStringValue:names];
@@ -153,6 +170,8 @@
     
     NSXPCInterface * interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(dogNamesForDogs:withReply:) argumentIndex:0 ofReply:NO]; // Need to specify Dog.class because is used as member of collection used as parameter or return type of XCP interface method. For usage outside of collection conforming  to NSSecureCoding protocol is enough.
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:NO];
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:YES];
     
     connectionToService.remoteObjectInterface = interface;
     [connectionToService resume];

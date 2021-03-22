@@ -21,6 +21,8 @@
     
     NSXPCInterface * interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(dogNamesForDogs:withReply:) argumentIndex:0 ofReply:NO];
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:NO];
+    [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:YES];
     
     newConnection.exportedInterface = interface;
     

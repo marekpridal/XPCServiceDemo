@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)dogNameForDog:(Dog *)aDog withReply:(void (^) (NSString *))reply;
 - (void)dogNamesForDogs:(NSArray<Dog *>*)dogs withReply:(void (^) (NSArray<NSString*> *))reply;
 - (void)setDogAgeForDog:(Dog *)aDog withReply:(void (^) (Dog *))reply;
+- (void)setDogAgeForDogs:(NSArray<Dog *> *)dogs withReply:(void (^) (NSArray<Dog *> *))reply;
 
 @end
 NS_ASSUME_NONNULL_END
