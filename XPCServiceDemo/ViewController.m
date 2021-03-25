@@ -6,6 +6,8 @@
 //
 
 #import "Constants.h"
+#import "ProxyObjectModel.h"
+#import "ProxyObjectProtocol.h"
 #import "ViewController.h"
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
 #import "XPCServiceDemo-Swift.h"
@@ -62,15 +64,30 @@
     NSLog(@"firstButtonPressed");
     
     ViewController *__weak weakSelf = self;
+//    [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf2.label setStringValue:error.localizedDescription];
+//        });
+//    }] upperCaseString:@"hello" withReply:^(NSString *aString) {
+//        ViewController *__weak weakSelf2 = weakSelf;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf2.label setStringValue:aString];
+//        });
+//    }];
+
+    ProxyObjectModel *model = [[ProxyObjectModel alloc] initWithStringProperty: @"Main app"];
+    [self.label setStringValue:model.stringProperty];
+    
     [[self.connectionToService remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+            ViewController *__weak weakSelf2 = weakSelf;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf2.label setStringValue:error.localizedDescription];
+            });
+    }] setPropertyForProxyObject:model completion: ^{
         ViewController *__weak weakSelf2 = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf2.label setStringValue:error.localizedDescription];
-        });
-    }] upperCaseString:@"hello" withReply:^(NSString *aString) {
-        ViewController *__weak weakSelf2 = weakSelf;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf2.label setStringValue:aString];
+            [weakSelf2.label setStringValue:model.stringProperty];
         });
     }];
 }
@@ -168,10 +185,17 @@
 - (void)establishXPCConnection {
     NSXPCConnection *connectionToService = [[NSXPCConnection alloc] initWithServiceName:XPCServiceDemoTitleLabelServiceName];
     
-    NSXPCInterface * interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
+    NSXPCInterface *interface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoTitleLabelServiceProtocol)];
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(dogNamesForDogs:withReply:) argumentIndex:0 ofReply:NO]; // Need to specify Dog.class because is used as member of collection used as parameter or return type of XCP interface method. For usage outside of collection conforming  to NSSecureCoding protocol is enough.
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:NO];
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:YES];
+    
+    NSXPCInterface *proxyInterface = [NSXPCInterface interfaceWithProtocol:@protocol(ProxyObjectProtocol)];
+    
+    [interface setInterface:proxyInterface
+                forSelector:@selector(setPropertyForProxyObject:completion:)
+              argumentIndex:0
+                    ofReply:NO];
     
     connectionToService.remoteObjectInterface = interface;
     [connectionToService resume];

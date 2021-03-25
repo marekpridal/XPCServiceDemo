@@ -24,6 +24,13 @@
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:NO];
     [interface setClasses:[self getParameterDataTypes] forSelector:@selector(setDogAgeForDogs:withReply:) argumentIndex:0 ofReply:YES];
     
+    NSXPCInterface *proxyInterface = [NSXPCInterface interfaceWithProtocol:@protocol(ProxyObjectProtocol)];
+    
+    [interface setInterface:proxyInterface
+                forSelector:@selector(setPropertyForProxyObject:completion:)
+              argumentIndex:0
+                    ofReply:NO];
+    
     newConnection.exportedInterface = interface;
     
     // Next, set the object that the connection exports. All messages sent on the connection to this service will be sent to the exported object to handle. The connection retains the exported object.

@@ -9,6 +9,11 @@ import Foundation
 
 @objc
 final class XPCServiceDemoTitleLabelService: NSObject, XPCServiceDemoTitleLabelServiceProtocol {
+    func setPropertyForProxyObject(_ proxyObject: ProxyObjectProtocol, completion: @escaping () -> Void) {
+        proxyObject.stringProperty = "XPC service"
+        completion()
+    }
+    
     func setDogAgeFor(_ dogs: [Dog], withReply reply: @escaping ([Dog]) -> Void) {
         reply(dogs.map { Dog(name: $0.name, age: NSNumber(integerLiteral: Int.random(in: 1...10))) })
     }
