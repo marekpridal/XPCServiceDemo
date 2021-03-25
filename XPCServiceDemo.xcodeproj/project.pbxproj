@@ -109,6 +109,7 @@
 		DFB6A107260CA1C70052031C /* ProxyObjectProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProxyObjectProtocol.h; sourceTree = "<group>"; };
 		DFB6A112260CA29B0052031C /* ProxyObjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProxyObjectModel.h; sourceTree = "<group>"; };
 		DFB6A113260CA29B0052031C /* ProxyObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProxyObjectModel.m; sourceTree = "<group>"; };
+		DFB6A11F260CB5570052031C /* XPCServiceDemoViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCServiceDemoViewControllerProtocol.h; sourceTree = "<group>"; };
 		DFFDFF162608B98500D38BA6 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		DFFDFF172608B98500D38BA6 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +193,7 @@
 				DF27942026020B7800EA3D9E /* ViewController.m */,
 				DF3D614926022FAA0015A7E7 /* XPCServiceDemo-Bridging-Header.h */,
 				DF27942A26020B7900EA3D9E /* XPCServiceDemo.entitlements */,
+				DFB6A11F260CB5570052031C /* XPCServiceDemoViewControllerProtocol.h */,
 			);
 			path = XPCServiceDemo;
 			sourceTree = "<group>";

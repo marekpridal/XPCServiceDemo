@@ -11,8 +11,9 @@
 #import "ViewController.h"
 #import "XPCServiceDemoTitleLabelServiceProtocol.h"
 #import "XPCServiceDemo-Swift.h"
+#import "XPCServiceDemoViewControllerProtocol.h"
 
-@interface ViewController()
+@interface ViewController() <XPCServiceDemoViewControllerProtocol>
 
 @property NSXPCConnection* connectionToService;
 @property (weak) IBOutlet NSButton *firstButton;
@@ -198,8 +199,10 @@
                     ofReply:NO];
     
     connectionToService.remoteObjectInterface = interface;
+    connectionToService.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XPCServiceDemoViewControllerProtocol)];
+    connectionToService.exportedObject = self;
     [connectionToService resume];
-    [self.connectionStatus setStringValue:[NSString stringWithFormat:@"Connected to service %@", connectionToService.serviceName]];
+    [self.connectionStatus setStringValue:[NSString stringWithFormat:@"Connection to service %@ established and waiting for first message", connectionToService.serviceName]];
     
     ViewController *__weak weakSelf = self;
     [connectionToService setInvalidationHandler:^{
@@ -225,6 +228,15 @@
 
 - (NSSet<NSSecureCoding> *)getParameterDataTypes {
     return [NSSet setWithObjects:NSArray.class, Dog.class, nil];
+}
+
+#pragma mark - XPCServiceDemoViewControllerProtocol
+
+-(void)connectionEstablishedWithMessage:(NSString *)message {
+    ViewController *__weak weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[weakSelf connectionStatus] setStringValue:message];
+    });
 }
 
 @end

@@ -11,7 +11,7 @@ import Foundation
 final class XPCServiceDemoTitleLabelService: NSObject, XPCServiceDemoTitleLabelServiceProtocol {
     func setPropertyForProxyObject(_ proxyObject: ProxyObjectProtocol, completion: @escaping () -> Void) {
         proxyObject.stringProperty = "XPC service"
-        completion()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1.0, execute: completion)
     }
     
     func setDogAgeFor(_ dogs: [Dog], withReply reply: @escaping ([Dog]) -> Void) {
